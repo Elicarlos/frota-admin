@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Lista de Veiculos{% endblock %}
+
+
+{% block content %}
+<a href="{% url 'home' %}">Home</a>
+
+<h1 align="center" style="margin-top: 20px;">Registro de Saida</h1>
+<br><br>
+
+<form class="form-inline" method="post">
+  {% csrf_token %}  
+  <input type="text" name="placa" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Placa">
+  <input type="text" name="destino"class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Destino">
+  <input type="text-area" name="observacoes" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Observações">
+  <input type="text" name="hodometro" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Hodometro">
+  <button type="submit" class="btn btn-primary mb-2">Salvar</button>
+</form>
+{% endblock%}

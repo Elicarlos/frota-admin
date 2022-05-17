@@ -1,11 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title %}Home{% endblock %}
+
 {% block content %}
+    <a href="{% url 'home' %}">Home</a>
+    <br>
+    <a href="{% url 'list-veiculos' %}">Cadastro de Veiculos</a>
+    <br>
+    <a href="{% url 'reg-saida' %}">Registrar Saida</a>
+    <br>
+    <a href="{% url 'reg-entrada' %}">Registrar Devolução</a>
+    <br>
+    <a href="{% url 'list-veiculos' %}">Adiciona Despesas</a>
+    <br>
+    <a href="{% url 'list-veiculos' %}">Lista De Veiculos</a>
 
-    <h1>Eu sou index</h1>
 
-
-    <button class="btn btn-primary">Salvar</button>
 
 
 {% endblock%}

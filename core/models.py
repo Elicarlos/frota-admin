@@ -21,26 +21,25 @@ class TipoVeiculo(Base):
 
 class Veiculo(Base):
     STATUS_VEICULO = (
-        ('d', 'Disponivel'),
-        ('i', 'Indisponivel'),
-        ('m', 'Manuntencao')
+        ('Disponivel', 'Disponivel'),
+        ('Indisponível', 'Indisponivel'),
+        ('Manutencão', 'Manuntencao')
     )
 
     descricao = models.CharField(max_length=100)
     tipo = models.ForeignKey(TipoVeiculo, on_delete=models.PROTECT )
     placa = models.CharField(max_length=50)
     hodometro_inicial = models.IntegerField()
-    hodometro_atual = models.IntegerField()
-    status = models.CharField(max_length=1, choices=STATUS_VEICULO, blank=False, null=False, default=1 )
+    status = models.CharField(max_length=20, choices=STATUS_VEICULO, blank=False, null=False, default=1 )
 
     def __str__(self):
-        return self.descricao
+        return f' {self.placa} - {self.status}'
     
 
 class TipoDespesa(Base):
     descricao = models.CharField('Descrição', max_length=100)
     def __str__(self):
-        return self.descricao
+        return f' {self.descricao}'
     
 
 class Despesa(Base):
